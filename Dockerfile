@@ -1,0 +1,9 @@
+FROM datamechanics/spark:3.0-latest
+
+ENV PYSPARK_MAJOR_PYTHON_VERSION=3
+RUN conda install -y numpy
+RUN conda install  -y PrettyTable
+
+WORKDIR /opt/cs643wine
+
+COPY winePrediction.py .
